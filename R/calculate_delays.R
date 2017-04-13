@@ -1,4 +1,12 @@
- # use the gps and gtfs to find which possible trip ids, then assign them based on some logic. Ends up with a object of trip_ids with gps "id".
+#' Add together two numbers.
+#' 
+#' @param x A number.
+#' @param y A number.
+#' @return The sum of \code{x} and \code{y}.
+#' @examples
+#' add(1, 1)
+#' add(10, 1)
+# use the gps and gtfs to find which possible trip ids, then assign them based on some logic. Ends up with a object of trip_ids with gps "id".
 calculate_delays <- function(my_gps_data, gtfs_today, lat_factor) {
   all_delays <- data.frame()
   for(i in unique(tidy_gps_obj$route))  {
