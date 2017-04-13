@@ -1,0 +1,17 @@
+Package: dlayr
+Type: Package
+Title: Calculate public transit delays based on the General Transit Feed Specification (GTFS) and a real time gps feed. 
+Version: 0.1.0
+Author: Hans Thompson
+Maintainer: Hans Thompson <hans.thompson1@gmail.com>
+Description: This package calculates the delays that google and third party apps want to show real time information on the public transit vechicle status. 
+    This package allows the delays to be output as a protocol buffer, json api, or a web map. 
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: dplyr,
+    lubridate,
+    tidyr,
+    gtfsr
+Remotes: ropensci/gtfsr
+RoxygenNote: 6.0.1
