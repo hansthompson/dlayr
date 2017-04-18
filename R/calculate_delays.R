@@ -12,7 +12,7 @@ calculate_delays <- function(my_gps_data, gtfs_today, lat_factor) {
   for(i in unique(tidy_gps_obj$route))  {
     for(j in unique(tidy_gps_obj$direction)) {
 
-      # just work on one route for now
+      # interate over each route-direction combo. 
       gps_data <- my_gps_data %>% filter(route == i, direction == j)
       if(nrow(gps_data) == 0) {next}
       # number of trips currently on the route and direction
