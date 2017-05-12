@@ -1,11 +1,8 @@
-#' Add together two numbers.
-#' 
-#' @param x A number.
-#' @param y A number.
+#' Filters the gtfs object to just what is used for the day.  I think this is important so there is less filtering happening on a realtime basis for each calculation of delays.
+#'
+#' @param gtfs_obj The object of type gtfs from the gtfsr package.
+#' @param today defaults to Sys.Date(). Of class, Date.
 #' @return The sum of \code{x} and \code{y}.
-#' @examples
-#' add(1, 1)
-#' add(10, 1)
 gtfs_drilldown <- function(gtfs_obj, today = Sys.Date()) {
   ### FILTER GTFS DATA FOR WHAT IS RELEVENT TODAY.
 
