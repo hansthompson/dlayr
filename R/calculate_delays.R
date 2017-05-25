@@ -4,13 +4,13 @@
 #' @param gtfs_today the result of daily_gtfs_obj()
 #' @param lat_factor the ratio difference between the length of a degree of longitude / latitude.  To be replaced with the haversine formula based on the gtfs stops table next.
 #' @return The sum of \code{x} and \code{y}.
-calculate_delays <- function(my_gps_data, gtfs_today, lat_factor) {
+calculate_delays <- function(tidy_gps_obj, gtfs_today, lat_factor) {
   all_delays <- data.frame()
   for(i in unique(tidy_gps_obj$route))  {
     for(j in unique(tidy_gps_obj$direction)) {
 
       # interate over each route-direction combo.
-      gps_data <- my_gps_data %>% filter(route == i, direction == j)
+      gps_data <- tidy_gps_obj %>% filter(route == i, direction == j)
       if(nrow(gps_data) == 0) {next}
       # number of trips currently on the route and direction
       n_trips <- nrow(gps_data)
